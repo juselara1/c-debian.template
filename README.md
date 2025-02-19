@@ -1,7 +1,7 @@
 # Base Cookiecutter Template for Arch Linux
 ---
 
-This `cookiecutter` template creates an isolated and complete development environment in `docker` using `debian` as the base image, and shares the same host user and ssh keys.
+This `cookiecutter` template creates an isolated and complete development environment for the C programming language in `docker` using `debian` as the base image, and shares the same host user and ssh keys.
 
 Example usage:
 

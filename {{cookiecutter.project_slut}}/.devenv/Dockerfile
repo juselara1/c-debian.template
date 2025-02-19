@@ -41,7 +41,7 @@ COPY --from=zoxide_build /root/.local/bin/zoxide /usr/local/bin/zoxide
 COPY --from=chezmoi_build /bin/chezmoi /usr/local/bin/chezmoi
 
 RUN apt update -y && apt install -y --no-install-recommends \
-	curl ca-certificates git tmux fzf openssh-client
+	curl ca-certificates git tmux fzf openssh-client clang build-essential
 RUN update-ca-certificates
 
 # Replicate the host user.
