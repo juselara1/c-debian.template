@@ -51,8 +51,9 @@ COPY --from=zoxide_build /root/.local/bin/zoxide /usr/local/bin/zoxide
 COPY --from=chezmoi_build /bin/chezmoi /usr/local/bin/chezmoi
 
 RUN apt update -y && apt install -y --no-install-recommends \
-	curl ca-certificates git tmux fzf openssh-client clang build-essential
+	curl ca-certificates git tmux fzf openssh-client clang clangd-12 build-essential
 RUN update-ca-certificates
+RUN update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
 
 # Replicate the host user.
 RUN groupadd -g ${GROUP_ID} ${USER_NAME} \
